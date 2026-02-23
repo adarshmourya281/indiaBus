@@ -1,0 +1,29 @@
+.hero {
+  position: relative;
+  width: 100%;
+  background: #f5f6fa;
+  padding-bottom: 100px; /* space for overlap */
+}
+
+.hero-container {
+  max-width: 1440px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.hero-image img {
+  width: 100%;
+  display: block;
+}
+
+.hero-search {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  
+  bottom: 155px;   /* 🔥 THIS CONTROLS OVERLAP */
+  
+  width: 90%;
+  max-width: 1200px;
+  z-index: 10;
+}

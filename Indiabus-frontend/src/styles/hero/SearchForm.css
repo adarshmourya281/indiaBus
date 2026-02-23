@@ -1,0 +1,109 @@
+.search-form {
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0px 8px 24px rgba(0, 0, 0, 0.08);
+  padding: 24px 32px;
+}
+
+.toggle-wrapper {
+  margin-bottom: 16px;
+}
+
+
+.search-inputs {
+  display: flex;
+  align-items: center;
+  border: 1px solid #e6e6e6;
+  border-radius: 12px;
+  overflow: hidden;
+  height: 72px;
+  background: #fff;
+}
+
+.input-group {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  padding: 0 20px;
+  gap: 12px;
+  border-right: 1px solid #e6e6e6;
+}
+
+.input-group:last-of-type {
+  border-right: none;
+}
+
+.input-icon {
+  width: 33px;
+  height: 33x;
+  object-fit: contain;
+}
+
+.input-group input {
+  border: none;
+  outline: none;
+  width: 100%;
+  font-size: 15px;
+  font-family: 'Poppins', sans-serif;
+}
+
+.swap-wrapper {
+  width: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-right: 1px solid #e6e6e6;
+}
+
+.swap-wrapper img {
+  width: 26px;
+  height: 26px;
+  cursor: pointer;
+}
+
+.search-btn {
+  height: 100%;
+  padding: 0 48px;
+  background: #ff8a00;
+  border: none;
+  color: #fff;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+/* Hide default browser calendar icon */
+input[type="date"]::-webkit-calendar-picker-indicator {
+  opacity: 0;
+  position: absolute;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+}
+
+.date-group {
+  position: relative;
+}
+
+.clickable {
+  cursor: pointer;
+}
+
+/* Circular background like Figma */
+.swap-circle {
+  width: 42px;
+  height: 42px;
+  background: #cfd0d341;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Arrow icon smaller */
+.swap-circle img {
+  width: 20px;
+  height: 20px;
+  object-fit: contain;
+  cursor: pointer;
+}
