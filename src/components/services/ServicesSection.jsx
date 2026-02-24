@@ -1,5 +1,4 @@
 import ServiceItem from "./ServiceItem";
-import "../../styles/services/ServicesSection.css";
 
 const services = [
   {
@@ -42,15 +41,21 @@ const services = [
 
 function ServicesSection() {
   return (
-    <section className="services-section">
-      <div className="gov-container">
-        <h2 className="services-title">Bus Booking Services We Offer</h2>
+    <section className="bg-white py-10">
+      <div className="max-w-[1200px] mx-auto px-4 lg:px-8">
 
-        <div className="services-list">
+        {/* Title */}
+        <h2 className="text-2xl md:text-3xl font-semibold mb-8">
+          Bus Booking Services We Offer
+        </h2>
+
+        {/* Services List */}
+        <div className="space-y-8">
           {services.map((service) => (
             <ServiceItem key={service.id} service={service} />
           ))}
         </div>
+
       </div>
     </section>
   );

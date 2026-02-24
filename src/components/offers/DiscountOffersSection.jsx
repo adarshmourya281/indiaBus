@@ -1,9 +1,7 @@
 import React, { useRef } from "react";
-import "../../styles/offers/DiscountOffersSection.css";
 import OfferCard from "./OfferCard";
 
 function DiscountOffersSection() {
-
   const scrollRef = useRef();
 
   const offers = [
@@ -13,7 +11,6 @@ function DiscountOffersSection() {
       buttonText: "CLAIM NOW",
       bgColor: "#D3E2FF",
       image: "/offers/offer1.png",
-      imgStyle: { height: "120px", left: "0px" }
     },
     {
       title: "Daily Travel Saver – UP TO 20% OFF",
@@ -21,7 +18,6 @@ function DiscountOffersSection() {
       buttonText: "TRY NOW",
       bgColor: "#F6E6B4",
       image: "/offers/offer2.png",
-       imgStyle: { height: "165px", right: "0px" }
     },
     {
       title: "Pay via UPI – Get ₹75 Cashback",
@@ -29,7 +25,6 @@ function DiscountOffersSection() {
       buttonText: "BOOK NOW",
       bgColor: "#CDEEDD",
       image: "/offers/offer3.png",
-       imgStyle: { height: "165px", right: "0px" }
     },
     {
       title: "Group Booking Deal",
@@ -37,7 +32,6 @@ function DiscountOffersSection() {
       buttonText: "BOOK NOW",
       bgColor: "#F6D2D2",
       image: "/offers/offer4.png",
-       imgStyle: { height: "165px", right: "0px" }
     },
     {
       title: "Festival Special Offer",
@@ -45,55 +39,59 @@ function DiscountOffersSection() {
       buttonText: "BOOK NOW",
       bgColor: "#E5D6FF",
       image: "/offers/offer5.png",
-       imgStyle: { height: "165px", right: "0px" }
     },
   ];
 
   const scrollRight = () => {
-  const container = scrollRef.current;
+    const container = scrollRef.current;
+    const scrollAmount = 350;
 
-  const scrollAmount = 350;
-  const maxScrollLeft =
-    container.scrollWidth - container.clientWidth;
-
-  // If already at end → go to start
-  if (container.scrollLeft >= maxScrollLeft - 10) {
-    container.scrollTo({
-      left: 0,
-      behavior: "smooth",
-    });
-  } else {
-    container.scrollBy({
-      left: scrollAmount,
-      behavior: "smooth",
-    });
-  }
-};
+    if (
+      container.scrollLeft >=
+      container.scrollWidth - container.clientWidth - 10
+    ) {
+      container.scrollTo({ left: 0, behavior: "smooth" });
+    } else {
+      container.scrollBy({ left: scrollAmount, behavior: "smooth" });
+    }
+  };
 
   return (
-    <section className="offers-section">
-      <div className="offers-container">
+    <section className="py-10 bg-white">
+      <div className="max-w-[1200px] mx-auto px-4 lg:px-8 relative">
 
-        <div className="offers-header">
-          <h2>Bus Booking Discount Offers</h2>
-          <span className="view-all">View All →</span>
+        {/* Header */}
+        <div className="flex justify-between items-center mb-6">
+          <h2 className="text-2xl md:text-3xl font-semibold">
+            Bus Booking Discount Offers
+          </h2>
+
+          <span className="text-[#ff8a00] font-medium cursor-pointer">
+            View All →
+          </span>
         </div>
 
-        <div className="offers-wrapper">
+        {/* Scroll Wrapper */}
+        <div className="relative">
 
-          <div className="offers-scroll" ref={scrollRef}>
+          {/* Scroll Container */}
+          <div
+            ref={scrollRef}
+            className="flex gap-6 overflow-x-auto scroll-smooth scrollbar-hide"
+          >
             {offers.map((offer, index) => (
               <OfferCard key={index} {...offer} />
             ))}
           </div>
 
-          {/* Arrow Button */}
-          <button className="scroll-btn" onClick={scrollRight}>
+          {/* Arrow Button (Desktop Only) */}
+          <button
+            onClick={scrollRight}
+            className="hidden lg:flex absolute right-[-25px] top-1/2 -translate-y-1/2 w-14 h-14 rounded-full bg-white shadow-lg items-center justify-center text-xl"
+          >
             →
           </button>
-
         </div>
-
       </div>
     </section>
   );

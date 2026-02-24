@@ -1,9 +1,0 @@
-.booking-toggle {
-  display: flex;
-  gap: 20px;
-  font-weight: 500;
-}
-
-.booking-toggle input {
-  margin-right: 6px;
-}

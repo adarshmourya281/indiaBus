@@ -1,6 +1,5 @@
 import { useRef } from "react";
 import BusCard from "./BusCard";
-import "../../styles/buses/GovernmentBusesSection.css";
 
 const buses = [
   {
@@ -34,46 +33,52 @@ function GovernmentBusesSection() {
 
   const handleScroll = () => {
     const container = scrollRef.current;
-
-    const cardWidth = 348;   // your card width
+    const cardWidth = 300;
     const gap = 24;
     const scrollAmount = cardWidth + gap;
 
-    // If reached end → go back to start
     if (
       container.scrollLeft + container.clientWidth >=
       container.scrollWidth - 5
     ) {
-      container.scrollTo({
-        left: 0,
-        behavior: "smooth",
-      });
+      container.scrollTo({ left: 0, behavior: "smooth" });
     } else {
-      container.scrollBy({
-        left: scrollAmount,
-        behavior: "smooth",
-      });
+      container.scrollBy({ left: scrollAmount, behavior: "smooth" });
     }
   };
 
   return (
-    <section className="gov-section">
-      <div className="gov-container">
-        <div className="gov-header">
-          <h2>Government Buses</h2>
-          <span className="view-all">
-            View All <span className="arrow-text">→</span>
+    <section className="bg-white py-10">
+      <div className="max-w-[1200px] mx-auto px-4 lg:px-8 relative">
+
+        {/* Header */}
+        <div className="flex justify-between items-center mb-6">
+          <h2 className="text-2xl md:text-3xl font-semibold">
+            Government Buses
+          </h2>
+
+          <span className="text-[#ff7a00] font-medium cursor-pointer">
+            View All →
           </span>
         </div>
 
-        <div className="gov-cards-wrapper">
-          <div className="gov-cards" ref={scrollRef}>
+        {/* Cards Wrapper */}
+        <div className="relative overflow-hidden">
+
+          <div
+            ref={scrollRef}
+            className="flex gap-6 overflow-x-auto scroll-smooth scrollbar-hide pb-4"
+          >
             {buses.map((bus) => (
               <BusCard key={bus.id} bus={bus} />
             ))}
           </div>
 
-          <button className="slider-arrow" onClick={handleScroll}>
+          {/* Arrow (Desktop Only) */}
+          <button
+            onClick={handleScroll}
+            className="hidden lg:flex absolute right-[-25px] top-1/2 -translate-y-1/2 w-16 h-16 rounded-full bg-white shadow-xl items-center justify-center text-xl text-[#ff7a00]"
+          >
             →
           </button>
         </div>

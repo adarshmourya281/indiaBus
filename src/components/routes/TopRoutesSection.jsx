@@ -1,5 +1,4 @@
 import RouteCard from "./RouteCard";
-import "../../styles/routes/TopRoutesSection.css";
 
 const routes = [
   {
@@ -56,36 +55,43 @@ const routes = [
     distance: "≈270 km",
     duration: "6–7 hours",
     operators: "UPSRT, Royal Travels",
-    reason: "Highly used by families, and working professional.",
+    reason: "Highly used by families and working professionals.",
   },
   {
     id: 8,
     title: "Chennai → Madurai",
     distance: "≈460 km",
     duration: "8–9 hours",
-    operators: "TNSTC, SRM Travels,KPN",
+    operators: "TNSTC, SRM Travels, KPN",
     reason: "Popular pilgrimage and tourist route in Tamil Nadu.",
   },
 ];
 
 function TopRoutesSection() {
   return (
-    <section className="routes-section">
-      <div className="gov-container">
-        <h2 className="routes-title">Top Bus Routes in India</h2>
+    <section className="bg-white py-10">
+      <div className="max-w-[1200px] mx-auto px-4 lg:px-8">
 
-        <p className="routes-description">
+        {/* Title */}
+        <h2 className="text-2xl md:text-3xl font-semibold mb-4">
+          Top Bus Routes in India
+        </h2>
+
+        {/* Description */}
+        <p className="text-sm md:text-base text-gray-600 leading-relaxed max-w-4xl mb-8">
           Travel across India with comfort and convenience on some of the most
           popular and frequently booked bus routes. From metro cities to hill
           stations and pilgrimage sites, here are the top routes Indian
           travelers love:
         </p>
 
-        <div className="routes-grid">
+        {/* Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           {routes.map((route) => (
             <RouteCard key={route.id} route={route} />
           ))}
         </div>
+
       </div>
     </section>
   );

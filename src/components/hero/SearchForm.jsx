@@ -1,77 +1,85 @@
-
 import React, { useRef, useState } from "react";
 import BookingToggle from "./BookingToggle";
-import "../../styles/hero/SearchForm.css";
 
 import busIcon from "../../assets/icons/bus.png";
 import calendarIcon from "../../assets/icons/calendar.png";
 import swapIcon from "../../assets/icons/swap.png";
 
 function SearchForm() {
+  const [dateType, setDateType] = useState("text");
+  const dateRef = useRef(null);
 
-const [dateType, setDateType] = useState("text");
-const dateRef = useRef(null);
-
-const openCalendar = () => {
-  setDateType("date");
-  setTimeout(() => {
-    dateRef.current.showPicker?.();
-  }, 0);
-};
+  const openCalendar = () => {
+    setDateType("date");
+    setTimeout(() => {
+      dateRef.current?.showPicker?.();
+    }, 0);
+  };
 
   return (
-    <div className="search-form">
+    <div className="bg-white rounded-xl shadow-xl p-6 md:p-8">
 
-      <div className="toggle-wrapper">
+      {/* Toggle */}
+      <div className="mb-6">
         <BookingToggle />
       </div>
 
-      <div className="search-inputs">
+      {/* Inputs Container */}
+      <div className="flex flex-col lg:flex-row lg:items-center border border-gray-200 rounded-xl overflow-hidden bg-white">
 
-        <div className="input-group">
-          <img src={busIcon} alt="bus" className="input-icon" />
-          <input type="text" placeholder="From Station" />
+        {/* From */}
+        <div className="flex items-center gap-3 px-5 py-4 flex-1 border-b lg:border-b-0 lg:border-r border-gray-200">
+          <img src={busIcon} alt="bus" className="w-7 h-7 object-contain" />
+          <input
+            type="text"
+            placeholder="From Station"
+            className="w-full outline-none text-sm md:text-base"
+          />
         </div>
 
-        <div className="swap-wrapper">
-  <div className="swap-circle">
-    <img src={swapIcon} alt="swap" />
-  </div>
-</div>
-
-        <div className="input-group">
-          <img src={busIcon} alt="bus" className="input-icon" />
-          <input type="text" placeholder="To Station" />
+        {/* Swap */}
+        <div className="flex justify-center items-center py-4 lg:py-0 lg:w-[80px] border-b lg:border-b-0 lg:border-r border-gray-200">
+          <div className="w-10 h-10 bg-gray-100 rounded-full flex items-center justify-center">
+            <img src={swapIcon} alt="swap" className="w-5 h-5 cursor-pointer" />
+          </div>
         </div>
 
-        {/* Travel Date */}
-        <div className="input-group date-group">
-  <img
-    src={calendarIcon}
-    alt="calendar"
-    className="input-icon clickable"
-    onClick={openCalendar}
-  />
+        {/* To */}
+        <div className="flex items-center gap-3 px-5 py-4 flex-1 border-b lg:border-b-0 lg:border-r border-gray-200">
+          <img src={busIcon} alt="bus" className="w-7 h-7 object-contain" />
+          <input
+            type="text"
+            placeholder="To Station"
+            className="w-full outline-none text-sm md:text-base"
+          />
+        </div>
 
-  <input
-    ref={dateRef}
-    type={dateType}
-    placeholder="Travel Date"
-    onFocus={() => setDateType("date")}
-    onBlur={(e) => {
-      if (!e.target.value) {
-        setDateType("text");
-      }
-    }}
-  />
-</div>
+        {/* Date */}
+        <div className="flex items-center gap-3 px-5 py-4 flex-1 border-b lg:border-b-0 lg:border-r border-gray-200 relative">
+          <img
+            src={calendarIcon}
+            alt="calendar"
+            className="w-7 h-7 object-contain cursor-pointer"
+            onClick={openCalendar}
+          />
 
-        <button className="search-btn">
+          <input
+            ref={dateRef}
+            type={dateType}
+            placeholder="Travel Date"
+            className="w-full outline-none text-sm md:text-base"
+            onFocus={() => setDateType("date")}
+            onBlur={(e) => {
+              if (!e.target.value) setDateType("text");
+            }}
+          />
+        </div>
+
+        {/* Button */}
+        <button className="bg-[#ff8a00] text-white font-semibold px-8 py-4 w-full lg:w-auto">
           SEARCH
         </button>
-
       </div>
-
     </div>
   );
 }
