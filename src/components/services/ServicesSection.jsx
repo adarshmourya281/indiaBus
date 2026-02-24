@@ -42,15 +42,15 @@ const services = [
 function ServicesSection() {
   return (
     <section className="bg-white py-10">
-      <div className="max-w-[1200px] mx-auto px-4 lg:px-8">
+      <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-10">
 
         {/* Title */}
-        <h2 className="text-2xl md:text-3xl font-semibold mb-8">
+        <h2 className="text-2xl md:text-3xl font-semibold mb-5">
           Bus Booking Services We Offer
         </h2>
 
         {/* Services List */}
-        <div className="space-y-8">
+        <div className="space-y-6">
           {services.map((service) => (
             <ServiceItem key={service.id} service={service} />
           ))}

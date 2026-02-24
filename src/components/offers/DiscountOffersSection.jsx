@@ -58,7 +58,7 @@ function DiscountOffersSection() {
 
   return (
     <section className="py-10 bg-white">
-      <div className="max-w-[1200px] mx-auto px-4 lg:px-8 relative">
+      <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-10">
 
         {/* Header */}
         <div className="flex justify-between items-center mb-6">

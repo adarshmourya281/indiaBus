@@ -2,22 +2,21 @@ import React from "react";
 
 function OfferCard({ title, subtitle, buttonText, bgColor, image }) {
   return (
-    <div
-      className="
-        min-w-[280px]
-        sm:min-w-[300px]
-        lg:min-w-[320px]
-        h-[190px]
-        rounded-xl
-        p-5
-        flex
-        justify-between
-        items-center
-        flex-shrink-0
-        overflow-hidden
-      "
-      style={{ backgroundColor: bgColor }}
-    >
+  <div
+  className="
+    min-w-[340px]
+    lg:min-w-[360px]
+    h-[190px]
+    rounded-xl
+    p-6
+    flex
+    justify-between
+    items-center
+    flex-shrink-0
+    overflow-hidden
+  "
+  style={{ backgroundColor: bgColor }}
+>
       {/* Content */}
       <div className="max-w-[55%]">
         <h3 className="text-sm md:text-base font-semibold mb-1">

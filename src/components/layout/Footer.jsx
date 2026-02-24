@@ -4,7 +4,7 @@ function Footer() {
   return (
     <footer className="bg-white py-10 ">
 
-      <div className="max-w-[1200px] mx-auto px-4 lg:px-8">
+      <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-10">
 
         {/* Top Section */}
         <div className="flex flex-col md:flex-row md:justify-between gap-10">

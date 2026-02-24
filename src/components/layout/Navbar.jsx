@@ -5,8 +5,7 @@ function Navbar() {
 
   return (
     <header className="w-full bg-white shadow-sm">
-      <div className="max-w-[1200px] mx-auto flex justify-between items-center h-[74px] px-4">
-
+     <div className="max-w-[1440px] mx-auto flex justify-between items-center h-[74px] px-4 sm:px-6 lg:px-10">
         {/* Logo */}
         <div className="text-3xl sm:text-4xl lg:text-[45px] font-extrabold tracking-wide">
           <span className="text-[#373737]">India</span>
