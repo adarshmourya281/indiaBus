@@ -91,7 +91,7 @@ function InfoSection() {
             About IndiaBus
           </h2>
 
-          <p className="text-sm md:text-base lg:text-lg text-gray-600 leading-relaxed max-w-5xl">
+          <p className="text-sm md:text-lg text-gray-600 leading-relaxed">
             IndiaBus is India’s trusted platform for booking bus tickets
             online. With 3,000+ bus operators and 100,000+ routes across India,
             we bring comfort, convenience, and reliability to your travel

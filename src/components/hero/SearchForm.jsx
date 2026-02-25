@@ -55,26 +55,23 @@ function SearchForm() {
         </div>
 
         {/* Date */}
-        <div className="flex items-center gap-3 px-5 py-4 flex-1 border-b lg:border-b-0 lg:border-r border-gray-200 relative">
-          <img
-            src={calendarIcon}
-            alt="calendar"
-            className="w-7 h-7 object-contain cursor-pointer"
-            onClick={openCalendar}
-          />
+        {/* Date */}
+<div className="flex items-center gap-3 px-5 py-4 flex-1 border-b lg:border-b-0 lg:border-r border-gray-200 relative">
 
-          <input
-            ref={dateRef}
-            type={dateType}
-            placeholder="Travel Date"
-            className="w-full outline-none text-sm md:text-base"
-            onFocus={() => setDateType("date")}
-            onBlur={(e) => {
-              if (!e.target.value) setDateType("text");
-            }}
-          />
-        </div>
+  <img
+    src={calendarIcon}
+    alt="calendar"
+    className="w-7 h-7 object-contain cursor-pointer"
+    onClick={() => dateRef.current?.showPicker?.()}
+  />
 
+  <input
+    ref={dateRef}
+    type="date"
+    className="w-full outline-none text-sm md:text-base appearance-none bg-transparent"
+  />
+
+</div>
         {/* Button */}
         <button className="bg-[#ff8a00] text-white font-semibold px-8 py-4 w-full lg:w-auto">
           SEARCH

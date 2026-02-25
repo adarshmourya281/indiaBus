@@ -1,20 +1,20 @@
 function BusCard({ bus }) {
   return (
-    <div
-      className="
-        relative
-        min-w-[260px]
-        sm:min-w-[280px]
-        lg:min-w-[300px]
-        h-[380px]
-        lg:h-[400px]
-        rounded-2xl
-        overflow-hidden
-        cursor-pointer
-        flex-shrink-0
-        group
-      "
-    >
+   <div
+  className="
+    relative
+    w-full
+    sm:w-[280px]
+    lg:w-[300px]
+    h-[320px]
+    lg:h-[400px]
+    rounded-2xl
+    overflow-hidden
+    cursor-pointer
+    flex-shrink-0
+    group
+  "
+>
       {/* Image */}
       <img
         src={bus.image}
