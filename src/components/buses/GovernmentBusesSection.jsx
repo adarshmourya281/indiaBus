@@ -26,6 +26,12 @@ const buses = [
     subtitle: "Kerala Road Transport Corporation",
     image: "/buses/kerala.png",
   },
+  {
+    id: 5,
+    title: "MSRTC",
+    subtitle: "Maharashtra State Road Transport Corporation",
+    image: "/buses/MSRT.png",
+  },
 ];
 
 function GovernmentBusesSection() {

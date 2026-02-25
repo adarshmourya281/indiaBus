@@ -16,21 +16,21 @@ function DiscountOffersSection() {
       title: "Daily Travel Saver – UP TO 20% OFF",
       subtitle: "Valid on weekdays",
       buttonText: "TRY NOW",
-      bgColor: "#F6E6B4",
+      bgColor: "#FFF8D3",
       image: "/offers/offer2.png",
     },
     {
       title: "Pay via UPI – Get ₹75 Cashback",
       subtitle: "Offer valid once per user per week",
       buttonText: "BOOK NOW",
-      bgColor: "#CDEEDD",
+      bgColor: "#D3FFEA",
       image: "/offers/offer3.png",
     },
     {
       title: "Group Booking Deal",
       subtitle: "Applicable for 5+ travellers",
       buttonText: "BOOK NOW",
-      bgColor: "#F6D2D2",
+      bgColor: "#f8c4c4",
       image: "/offers/offer4.png",
     },
     {
@@ -80,8 +80,12 @@ function DiscountOffersSection() {
             className="flex gap-6 overflow-x-auto scroll-smooth scrollbar-hide"
           >
             {offers.map((offer, index) => (
-              <OfferCard key={index} {...offer} />
-            ))}
+  <OfferCard
+    key={index}
+    {...offer}
+    isCircle={index === 0}
+  />
+))}
           </div>
 
           {/* Arrow Button (Desktop Only) */}

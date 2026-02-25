@@ -1,47 +1,66 @@
 import React from "react";
-
-function OfferCard({ title, subtitle, buttonText, bgColor, image }) {
+function OfferCard({ title, subtitle, buttonText, bgColor, image , isCircle}) {
   return (
-  <div
-  className="
-    min-w-[340px]
-    lg:min-w-[360px]
-    h-[190px]
-    rounded-xl
-    p-6
-    flex
-    justify-between
-    items-center
-    flex-shrink-0
-    overflow-hidden
-  "
-  style={{ backgroundColor: bgColor }}
->
-      {/* Content */}
-      <div className="max-w-[55%]">
-        <h3 className="text-sm md:text-base font-semibold mb-1">
+    <div
+      className="
+        relative
+        w-[360px]
+        h-[193px]
+        rounded-xl
+        p-6
+        overflow-hidden
+        flex-shrink-0
+      "
+      style={{ backgroundColor: bgColor }}
+    >
+      {/* TEXT AREA (Fixed Width) */}
+      <div className="w-[210px]">
+        <h3 className="text-[13px] font-semibold mb-2 leading-tight">
           {title}
         </h3>
 
-        <p className="text-xs md:text-sm text-gray-600 mb-4">
+        <p className="text-[12px] text-gray-600">
           {subtitle}
         </p>
-
-        <button className="bg-white px-4 py-2 rounded-full text-sm font-medium hover:shadow-md transition">
-          {buttonText}
-        </button>
       </div>
 
-      {/* Image */}
-      <div className="w-[45%] h-full flex items-end justify-end">
-        <img
-          src={image}
-          alt="offer"
-          className="max-h-[140px] object-contain"
-        />
-      </div>
+      {/* BUTTON (Fixed Position) */}
+      <button
+        className="
+          absolute
+          bottom-6
+          left-6
+          bg-white
+          px-4
+          py-2
+          rounded-full
+          text-[12px]
+          font-semibold
+        "
+      >
+        {buttonText}
+      </button>
+
+      {/* IMAGE AREA (Completely Independent) */}
+      {/* IMAGE AREA */}
+<div className="absolute bottom-4 right-4">
+  {isCircle ? (
+    <div className="w-[120px] h-[120px] rounded-full overflow-hidden flex items-center justify-center">
+      <img
+        src={image}
+        alt="offer"
+        className="w-full h-full object-cover"
+      />
+    </div>
+  ) : (
+    <img
+      src={image}
+      alt="offer"
+      className="h-[110px] object-contain"
+    />
+  )}
+</div>
     </div>
   );
 }
-
 export default OfferCard;
