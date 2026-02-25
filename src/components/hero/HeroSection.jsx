@@ -3,36 +3,33 @@ import SearchForm from "./SearchForm";
 
 function HeroSection() {
   return (
-    <section className="relative w-full bg-[#f5f6fa] pb-24">
+    <section className="w-full bg-[#f5f6fa]">
 
-      <div className="relative max-w-[1440px] mx-auto">
+      <div className="relative max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-10">
 
         {/* Hero Image */}
-        <div>
-          <img
-            src="/hero-image.png"
-            alt="hero"
-            className="w-full block"
-          />
-        </div>
+        <img
+          src="/hero-image.png"
+          alt="hero"
+          className="w-full h-auto block"
+        />
 
-        {/* Search Overlap */}
-        <div className="
-          absolute 
-          left-1/2 
-          -translate-x-1/2 
-          w-[95%] 
-          max-w-[1200px] 
-          z-10
-          bottom-10
-          md:bottom-16
-          lg:bottom-[155px]
-        ">
+        {/* Search Form */}
+        <div
+          className="
+            w-full
+            -mt-20
+            sm:-mt-24
+            md:-mt-28
+            lg:-mt-40
+            relative
+            z-10
+          "
+        >
           <SearchForm />
         </div>
 
       </div>
-
     </section>
   );
 }
