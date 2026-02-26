@@ -6,9 +6,16 @@ import calendarIcon from "../../assets/icons/calendar.png";
 import swapIcon from "../../assets/icons/swap.png";
 
 function SearchForm() {
-  const [dateType, setDateType] = useState("text");
+
   const dateRef = useRef(null);
 
+  // controls type switching
+  const [dateType, setDateType] = useState("text");
+
+  // stores selected date
+  const [travelDate, setTravelDate] = useState("");
+
+  // open calendar from icon click
   const openCalendar = () => {
     setDateType("date");
     setTimeout(() => {
@@ -40,7 +47,11 @@ function SearchForm() {
         {/* Swap */}
         <div className="flex justify-center items-center py-4 lg:py-0 lg:w-[80px] border-b lg:border-b-0 lg:border-r border-gray-200">
           <div className="w-10 h-10 bg-gray-100 rounded-full flex items-center justify-center">
-            <img src={swapIcon} alt="swap" className="w-5 h-5 cursor-pointer" />
+            <img
+              src={swapIcon}
+              alt="swap"
+              className="w-5 h-5 cursor-pointer"
+            />
           </div>
         </div>
 
@@ -55,28 +66,39 @@ function SearchForm() {
         </div>
 
         {/* Date */}
-        {/* Date */}
-<div className="flex items-center gap-3 px-5 py-4 flex-1 border-b lg:border-b-0 lg:border-r border-gray-200 relative">
+        <div className="flex items-center gap-3 px-5 py-4 flex-1 border-b lg:border-b-0 lg:border-r border-gray-200 relative">
 
-  <img
-    src={calendarIcon}
-    alt="calendar"
-    className="w-7 h-7 object-contain cursor-pointer"
-    onClick={() => dateRef.current?.showPicker?.()}
-  />
+          <img
+            src={calendarIcon}
+            alt="calendar"
+            className="w-7 h-7 object-contain cursor-pointer"
+            onClick={openCalendar}
+          />
 
-  <input
-    ref={dateRef}
-    type="date"
-    className="w-full outline-none text-sm md:text-base appearance-none bg-transparent"
-  />
+          <input
+            ref={dateRef}
+            type={dateType}
+            value={travelDate}
+            placeholder="Travel Date"
+            onFocus={() => setDateType("date")}
+            onBlur={() => {
+              if (!travelDate) {
+                setDateType("text");
+              }
+            }}
+            onChange={(e) => setTravelDate(e.target.value)}
+            className="w-full outline-none text-sm md:text-base bg-transparent"
+          />
 
-</div>
+        </div>
+
         {/* Button */}
         <button className="bg-[#ff8a00] text-white font-semibold px-8 py-4 w-full lg:w-auto">
           SEARCH
         </button>
+
       </div>
+
     </div>
   );
 }

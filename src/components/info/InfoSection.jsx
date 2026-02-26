@@ -1,3 +1,4 @@
+import React from "react";
 function InfoSection() {
   return (
     <section className="bg-white py-10">

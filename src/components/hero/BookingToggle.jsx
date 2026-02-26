@@ -22,7 +22,7 @@ function BookingToggle() {
             <div className="w-2 h-2 bg-[#ff8a00] rounded-full"></div>
           )}
         </div>
-        Book Now
+        book Now
       </label>
 
       {/* Round Trip */}

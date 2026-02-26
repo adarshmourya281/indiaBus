@@ -4,14 +4,15 @@ function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
+    
     <header className="w-full bg-white relative z-50">
-      <div className="max-w-[1440px] mx-auto flex justify-between items-center py-4 sm:py-6 px-4 sm:px-6 lg:px-10">
+  <div className="max-w-[1600px] mx-auto flex justify-between items-center py-4 sm:py-6 px-6 lg:px-12">
 
         {/* Logo */}
-        <h1 className="font-['League_Spartan'] font-bold text-[26px] sm:text-[34px] lg:text-[52px] leading-none">
-          <span className="text-[#313131]">India</span>
-          <span className="text-[#FF8A00]">Bus</span>
-        </h1>
+<h1 className="font-spartan font-bold text-[28px] sm:text-[38px] lg:text-[58px] leading-none tracking-[-0.5px]">
+  <span className="text-[#313131]">India</span>
+  <span className="text-[#FF8A00]">Bus</span>
+</h1>
 
         {/* Desktop Menu */}
         <ul className="hidden lg:flex gap-10 text-[18px] text-[#555] font-medium">
@@ -42,6 +43,7 @@ function Navbar() {
         </div>
       )}
     </header>
+    
   );
 }
 

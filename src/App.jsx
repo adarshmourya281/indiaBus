@@ -1,3 +1,4 @@
+import React from "react";
 import Navbar from "./components/layout/Navbar";
 import HeroSection from "./components/hero/HeroSection";
 import DiscountOffersSection from "./components/offers/DiscountOffersSection";

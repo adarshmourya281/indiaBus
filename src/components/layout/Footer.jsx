@@ -1,3 +1,4 @@
+import React from "react";
 import { FaFacebookF, FaInstagram, FaTwitter, FaLinkedinIn } from "react-icons/fa";
 
 function Footer() {
@@ -11,9 +12,10 @@ function Footer() {
 
           {/* Column 1 */}
           <div>
-            <h2 className="text-3xl font-bold">
-              India<span className="text-[#ff7a00]">Bus</span>
-            </h2>
+          <h2 className="font-spartan font-bold text-[22px] sm:text-[28px] lg:text-[36px] leading-none tracking-[-0.5px]">
+  <span className="text-[#313131]">India</span>
+  <span className="text-[#FF8A00]">Bus</span>
+</h2>
 
             <h4 className="mt-4 font-semibold text-sm">
               Customer Support

@@ -27,7 +27,6 @@ input[type="date"]::-webkit-calendar-picker-indicator {
   cursor: pointer;
 }
 
-/* Remove default styling */
 input[type="date"] {
   appearance: none;
   -webkit-appearance: none;
