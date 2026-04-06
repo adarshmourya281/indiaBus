@@ -1,5 +1,4 @@
 import React, { useRef, useState } from "react";
-import BookingToggle from "./BookingToggle";
 
 import busIcon from "../../assets/icons/bus.png";
 import calendarIcon from "../../assets/icons/calendar.png";
@@ -9,13 +8,12 @@ function SearchForm() {
 
   const dateRef = useRef(null);
 
-  // controls type switching
   const [dateType, setDateType] = useState("text");
-
-  // stores selected date
   const [travelDate, setTravelDate] = useState("");
 
-  // open calendar from icon click
+  // 👇 merged state from BookingToggle
+  const [tripType, setTripType] = useState("oneway");
+
   const openCalendar = () => {
     setDateType("date");
     setTimeout(() => {
@@ -26,9 +24,49 @@ function SearchForm() {
   return (
     <div className="bg-white rounded-xl shadow-xl p-6 md:p-8">
 
-      {/* Toggle */}
-      <div className="mb-6">
-        <BookingToggle />
+      {/* ✅ Booking Toggle (Merged Here) */}
+      <div className="flex items-center gap-6 font-medium text-sm md:text-base mb-6">
+
+        {/* Book Now */}
+        <label className="flex items-center gap-2 cursor-pointer">
+          <input
+            type="radio"
+            value="oneway"
+            checked={tripType === "oneway"}
+            onChange={() => setTripType("oneway")}
+            className="hidden"
+          />
+          <div
+            className={`w-4 h-4 rounded-full border-2 flex items-center justify-center
+            ${tripType === "oneway" ? "border-[#ff8a00]" : "border-gray-400"}`}
+          >
+            {tripType === "oneway" && (
+              <div className="w-2 h-2 bg-[#ff8a00] rounded-full"></div>
+            )}
+          </div>
+          Book Now
+        </label>
+
+        {/* Round Trip */}
+        <label className="flex items-center gap-2 cursor-pointer">
+          <input
+            type="radio"
+            value="roundtrip"
+            checked={tripType === "roundtrip"}
+            onChange={() => setTripType("roundtrip")}
+            className="hidden"
+          />
+          <div
+            className={`w-4 h-4 rounded-full border-2 flex items-center justify-center
+            ${tripType === "roundtrip" ? "border-[#ff8a00]" : "border-gray-400"}`}
+          >
+            {tripType === "roundtrip" && (
+              <div className="w-2 h-2 bg-[#ff8a00] rounded-full"></div>
+            )}
+          </div>
+          Round Trip
+        </label>
+
       </div>
 
       {/* Inputs Container */}
@@ -82,9 +120,7 @@ function SearchForm() {
             placeholder="Travel Date"
             onFocus={() => setDateType("date")}
             onBlur={() => {
-              if (!travelDate) {
-                setDateType("text");
-              }
+              if (!travelDate) setDateType("text");
             }}
             onChange={(e) => setTravelDate(e.target.value)}
             className="w-full outline-none text-sm md:text-base bg-transparent"
@@ -103,4 +139,4 @@ function SearchForm() {
   );
 }
 
-export default SearchForm;
+export default SearchForm; 

@@ -15,17 +15,17 @@ function HeroSection() {
         />
 
         {/* Search Form */}
-        <div
-          className="
-            w-full
-            -mt-20
-            sm:-mt-24
-            md:-mt-28
-            lg:-mt-40
-            relative
-            z-10
-          "
-        >
+        <div className="
+  w-full
+  -mt-20
+  sm:-mt-24
+  md:-mt-28
+  lg:-mt-72
+  xl:-mt-80
+  2xl:-mt-[22rem]
+  relative
+  z-10
+">
           <SearchForm />
         </div>
 
